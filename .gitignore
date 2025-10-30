@@ -1,5 +1,4 @@
 # API 키 및 민감한 정보가 포함된 파일
-config.js
 .env.local
 .env
 

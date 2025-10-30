@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(node server.js:*)",
-      "Bash(start http://localhost:3000)"
+      "Bash(start http://localhost:3000)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nVercel 배포 설정 추가\n\n추가된 파일:\n- vercel.json: Vercel 정적 사이트 호스팅 설정\n- .vercelignore: 배포 시 제외할 파일 목록\n- VERCEL_DEPLOY.md: Vercel 배포 가이드 (한국어)\n- package.json: main을 index.html로 변경, build 스크립트 추가\n\n주요 변경사항:\n- Vercel에서 정적 파일 호스팅으로 배포 가능\n- server.js는 로컬 개발용으로만 사용\n- Google Sheets API는 브라우저에서 직접 호출\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nconfig.js API 키 제거 및 안전하게 설정\n\n변경 사항:\n- API_KEY를 빈 문자열로 변경\n- SPREADSHEET_ID를 빈 문자열로 변경\n- ENABLED를 false로 변경\n- 실제 API 키는 .env.local에 보관 (로컬 전용)\n- Vercel 배포 시 환경변수 사용\n\n보안:\n- 더 이상 API 키가 코드에 노출되지 않음\n- .env.local은 .gitignore에 포함되어 깃허브에 올라가지 않음\n- config.example.js를 참고하여 각자 설정 가능\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)",
+      "Read(//c/Users/admin/Desktop/game/**)"
     ],
     "deny": [],
     "ask": []
