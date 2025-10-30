@@ -1,0 +1,17 @@
+{
+  "name": "tetris-game",
+  "version": "1.0.0",
+  "description": "테트리스 게임 - 모바일 및 PC 지원",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "tetris",
+    "game",
+    "html5"
+  ],
+  "author": "",
+  "license": "MIT"
+}

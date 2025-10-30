@@ -1,0 +1,324 @@
+/* 전체 페이지 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 게임 컨테이너 */
+.game-container {
+    display: flex;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 1200px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 정보 패널 */
+.info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 250px;
+}
+
+.info-panel h1 {
+    color: #667eea;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* 점수 정보 */
+.score-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.value {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* 다음 블록 미리보기 */
+.next-piece-container {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.next-piece-container h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#nextPieceCanvas {
+    background: white;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 버튼 스타일 */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-secondary {
+    background: #ffa500;
+    color: white;
+}
+
+.btn-danger {
+    background: #ff4757;
+    color: white;
+}
+
+/* 조작 가이드 */
+.instructions {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.9em;
+}
+
+.instructions h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.instructions p {
+    margin: 5px 0;
+    color: #333;
+}
+
+/* 게임 보드 */
+.game-board {
+    position: relative;
+}
+
+#gameCanvas {
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+/* 게임 오버 오버레이 */
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+}
+
+.game-overlay.hidden {
+    display: none;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.overlay-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff4757;
+}
+
+.overlay-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+#finalScore {
+    color: #ffa500;
+    font-weight: bold;
+}
+
+/* 모바일 컨트롤 */
+.mobile-controls {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.control-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mobile-btn {
+    padding: 20px;
+    min-width: 80px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+.mobile-btn:active {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn-drop {
+    background: linear-gradient(135deg, #ffa500 0%, #ff4757 100%);
+    min-width: 260px;
+}
+
+/* 반응형 디자인 - 태블릿 */
+@media (max-width: 1024px) {
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-panel {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .mobile-controls {
+        display: flex;
+    }
+}
+
+/* 반응형 디자인 - 모바일 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .game-container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .info-panel h1 {
+        font-size: 2em;
+    }
+
+    #gameCanvas {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .instructions {
+        font-size: 0.8em;
+    }
+
+    .mobile-btn {
+        padding: 15px;
+        min-width: 70px;
+        font-size: 1em;
+    }
+
+    .btn-drop {
+        min-width: 220px;
+    }
+}
+
+/* 작은 모바일 화면 */
+@media (max-width: 480px) {
+    .info-panel h1 {
+        font-size: 1.5em;
+    }
+
+    .score-info {
+        padding: 15px;
+    }
+
+    .info-item {
+        font-size: 1em;
+    }
+
+    .mobile-btn {
+        padding: 12px;
+        min-width: 60px;
+        font-size: 0.9em;
+    }
+
+    .btn-drop {
+        min-width: 190px;
+    }
+}

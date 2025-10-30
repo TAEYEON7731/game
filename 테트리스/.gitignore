@@ -1,0 +1,25 @@
+# API 키 및 민감한 정보가 포함된 파일
+config.js
+.env.local
+.env
+
+# Node.js 관련
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 운영체제 관련
+.DS_Store
+Thumbs.db
+
+# 에디터 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 임시 파일
+*.tmp
+*.temp
